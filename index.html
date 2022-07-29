@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elan&Vision</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #drpdwn {
+            visibility: hidden;
+            z-index: -9;
+            margin: 4px 10px;
+            /* display:; */
+            color: blue;
+            background-color: aquamarine;
+            width: 100px;
+            height: auto;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgb(217, 219, 217);
+            /* box-shadow:  0px 8px 24px rgba(149, 157, 165, 0.2); */
+
+        }
+
+        #drpdwn a {
+            padding: 5px 5px;
+            display: block;
+            /* height: 50px; */
+            width: 100px;
+            text-decoration: none;
+            font-style: oblique;
+            font: size 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #drpdwn a:hover {
+            background-color: rgb(244, 239, 100);
+        }
+
+        #drpdwn li {
+            /* padding: 5px 5px; */
+            /* display:inline; */
+            /* align-items: center; */
+        }
+
+        #drpdwn ul {
+            list-style-type: none;
+            text-decoration: none;
+
+        }
+
+        #drpdwn_top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #bef_btn {
+            z-index: 3;
+        }
+
+        #drpdwn_bottom {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #drpdwn_btn {
+            /* z-index: -9; */
+
+            margin: 10px 0 0 10px;
+            width: 35px;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            padding: 3px;
+
+        }
+
+        /* #drpdwn_btn :after{
+            animation: drpdwn_btn .0001s 1;
+            /* animation-play-state: paused; */
+        /* } */
+        #drpdwn_btn div {
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: rgba(40, 228, 103, 0.722);
+        }
+
+        #bef_btn :hover {
+            cursor: pointer;
+            background-color: aliceblue;
+        }
+
+        #bef_btn div:hover {
+            background-color: rgba(40, 228, 103, 0.722);
+        }
+
+        @keyframes drpdwn_btn {
+            50% {
+                transform: rotate(-80deg);
+            }
+        }
+
+        body {
+            background-image: url("images/background.jfif");
+        }
+
+        #content {
+            top: 0;
+            font-size: 50px;
+            /* margin: -100; */
+            /* z-index: 2; */
+        }
+
+        #main {
+            position: relative;
+        }
+
+        #taskbar {
+            position: absolute;
+        }
+
+        #heading {
+
+            color: aqua;
+            text-align: center;
+        }
+        #logo{
+            /* position: relative; */
+            /* left: 20px; */
+            float: left;
+                }
+    </style>
+    <script>
+        t = 0
+        function drpdwn_onoff() {
+            drpdwn_btn = document.getElementById("drpdwn_btn")
+            drpdwn_btn.style.animation = "none"
+            drpdwn_btn.offsetHeight;
+            drpdwn_btn.style.animation = "drpdwn_btn .5s 1"
+            if (t % 2 == 1) document.getElementById("drpdwn").style.visibility = "hidden"
+            if (t % 2 == 0) document.getElementById("drpdwn").style.visibility = "visible"
+
+            t += 1
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="taskbar">
+            <div id="bef_btn"><button id="drpdwn_btn" onclick="drpdwn_onoff()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </button></div>
+
+            <ul id="drpdwn">
+                <li><a id="drpdwn_top" href="index.html">Home</a></li>
+                <li><a href="">Event</a></li>
+                <li><a id="drpdwn_bottom" href="">Sponsors</a></li>
+            </ul>
+            <img src="images/logo.jfif" alt="logo" id="logo">
+        </div>
+        <div id="content">
+            <h3 id="heading">Elan & Nvision</h3>
+        </div>
+    </div>
+    <!-- <script src="main.js"></script> -->
+</body>
+
+</html>
