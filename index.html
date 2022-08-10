@@ -127,23 +127,73 @@
             position: absolute;
         }
 
+        #elan {
+            font-size: 80px;
+            font-family: 'Nosifer', cursive;
+            font-weight: lighter;
+        }
+        #and {
+            font-size: 50px;
+            font-family: 'Nosifer', cursive;
+            font-weight: lighter;
+        }
+        #vision {
+            font-size: 80px;
+            font-weight: lighter;
+        }
         #heading {
+
+            position: relative;
+            top: 100px;
             color: aqua;
             text-align: center;
+            font-family: 'Nosifer', cursive;
+            font-weight: lighter;
+            animation: glow 1s infinite alternate;
         }
-
-        img{
-            clip:rect(0px,130px,60px,40px);
+        #logo{
+            
+            /* clip:rect(0px,130px,60px,40px); */
             display: block;
-            width: 185px;
+            width: 120px;
             /* float: right; */
             position: fixed;
-            right: 0;
+            right: 10px;
             /* left:400px; */
             top:0;
         }
+        
+                    @media screen and (max-width: 640px){
+            #logo{
+                width: 80px;
+            }
+        }
+        
+        @keyframes glow{
+            from{
+                text-shadow:0px 0px 5px rgb(107, 200, 53)
+            }
+            to{
+                text-shadow: 0px 0px 20px  rgb(107, 200, 53) ;
+            }
+        }
     </style>
     <script>
+        // console.log(window.innerWidth)
+        // console.log(window.innerHeight)
+        // if(window.innerHeight<window.innerWidth){
+        //     console.log(window.screen.width)
+
+        //     document.getElementById("logo").style.width='10px'
+
+        // }
+        // else{
+        //             // console.log(window.innerWidth)
+
+        //     document.getElementById("logo").style.width="1/100*window.screen.width"
+        // }
+
+
         t = 0
         function drpdwn_onoff() {
             drpdwn_btn = document.getElementById("drpdwn_btn")
@@ -156,6 +206,9 @@
             t += 1
         }
     </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -174,11 +227,13 @@
                 <li><a href="">Event</a></li>
                 <li><a id="drpdwn_bottom" href="">Sponsors</a></li>
             </ul>
-            <img src="images/elannvisionlogo.webp" alt="logo" id="logo" >
+            <img src="images/elannvision_logo.png" alt="logo" id="logo" >
 
         </div>
-        <div id="content">
-            <h3 id="heading">Elan & Nvision</h3>
+        <div id="heading">
+            <h3 id="elan">Elan</h3>
+            <h3 id="and">&</h3>
+            <h3 id="vision">nVision</h3>
         </div>
     </div>
     <!-- <script src="main.js"></script> -->
